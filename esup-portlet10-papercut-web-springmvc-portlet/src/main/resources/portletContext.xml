@@ -26,9 +26,9 @@
 
 					<bean class="org.esupportail.papercut.esup_portlet10_papercut.services.PapercutService">
 
-						<property name="authToken" value="tokenpapercut" />
-						<property name="server" value="papercut.univ-jfc.fr" />
-						<property name="port" value="9191" />
+						<property name="authToken" value="token" />
+						<property name="server" value="papercut.univ.fr" />
+						<property name="port" value="80" />
 
 					</bean>
 
