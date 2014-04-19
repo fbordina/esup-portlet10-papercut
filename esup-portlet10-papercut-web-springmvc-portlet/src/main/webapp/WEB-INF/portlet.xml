@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app
+    xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd"
+    version="1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd
+                        http://java.sun.com/xml/ns/portlet/portlet-app_1_0.xsd">
+
+    <portlet>
+        <portlet-name>${portlet.name}</portlet-name>
+        <display-name xml:lang="fr">esup-portlet10-papercut-web-springmvc-portlet</display-name>
+        <portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+        <init-param>
+            <name>contextConfigLocation</name>
+            <value>classpath:portletContext.xml</value>
+        </init-param>
+        <expiration-cache>0</expiration-cache>
+        <supports>
+            <mime-type>text/html</mime-type>
+            <portlet-mode>VIEW</portlet-mode>
+            <portlet-mode>EDIT</portlet-mode>
+            <portlet-mode>HELP</portlet-mode>
+            <portlet-mode>ABOUT</portlet-mode>
+        </supports>
+        <supported-locale>fr</supported-locale>
+        <supported-locale>en</supported-locale>
+        <portlet-info>
+            <title>esup-portlet10-papercut-web-springmvc-portlet</title>
+            <short-title>esup-portlet10-papercut-web-springmvc-portlet</short-title>
+            <keywords>esup-portlet10-papercut-web-springmvc-portlet</keywords>
+        </portlet-info>
+
+		<portlet-preferences>
+				<preference>
+					<name>userEmail</name>
+					<value>mail</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>papercutUserUidAttr</name>
+					<value>uid</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>paperCutContext</name>
+					<value>test</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>validatePayboxJustWithRedirection</name>
+					<value>true</value>
+					<read-only>true</read-only>
+				</preference>
+				<preference>
+					<name>htmlHeader</name>
+					<value>&lt;p&gt;Coûts des impressions : &lt;b&gt;10 centimes&lt;/b&gt; la page ; 15 centimes 2 pages en R/V&lt;/p&gt;</value>
+					<read-only>true</read-only>
+				</preference>
+				<preference>
+					<name>htmlFooter</name>
+					<value>&lt;p&gt;Attention, le solde d'impression restant ne peut à aucun moment vous être reversé par l'université. 
+					Aussi prenez garde à ne créditer votre solde d'impression qu'en &lt;b&gt;fonction de vos besoins réels&lt;/b&gt;.&lt;/p&gt;</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>payboxMontantMin</name>
+					<value>0.5</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>payboxMontantMax</name>
+					<value>5.0</value>
+					<read-only>true</read-only>
+				</preference>
+				<preference>
+					<name>payboxMontantStep</name>
+					<value>0.5</value>
+					<read-only>true</read-only>
+				</preference>	
+				<preference>
+					<name>payboxMontantDefaut</name>
+					<value>2.0</value>
+					<read-only>true</read-only>
+				</preference>		
+			</portlet-preferences>
+			
+			<security-role-ref>
+		            <role-name>esupPapercutAdmin</role-name>
+		            <role-link>pags.super_admins</role-link>
+			</security-role-ref>
+		
+			
+	    </portlet>
+	
+		<user-attribute>
+			<description>luid</description>
+			<name>luid</name>
+		</user-attribute>
+		<user-attribute>
+			<description>uid</description>
+			<name>uid</name>
+		</user-attribute>
+		<user-attribute>
+			<description>mail</description>
+			<name>mail</name>
+		</user-attribute>
+
+
+</portlet-app>

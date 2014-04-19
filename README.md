@@ -1,0 +1,2 @@
+Esup-portlet10-papercut est une portlet 1.0 (JSR168) basée sur esup commons v2 et spring mvc affichant les informations du compte Papercut de l'utilisateur.
+Elle est une adaptation simplifiée de esup-papercut : https://github.com/EsupPortail/esup-papercut

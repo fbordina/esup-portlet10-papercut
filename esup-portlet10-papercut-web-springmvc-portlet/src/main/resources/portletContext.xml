@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+    	<!-- Annotations Configuration -->
+		<context:annotation-config />
+        <context:component-scan base-package="org.esupportail.papercut.esup_portlet10_papercut"/>
+        
+        <util:map id="esupPaperCutServices">
+ 
+                <!--  paperCutContext gived in portlet.xml or when publishing portlet must be match a key here -->
+		<!--  le paperCutContext donné dans portlet.xml ou lors de la publication de la portlet doit correspondre à une key -->
+		<entry key="test">
+
+
+			<bean id="esupPaperCutService" class="org.esupportail.papercut.esup_portlet10_papercut.services.EsupPaperCutService">
+
+				<property name="papercutService">
+
+					<bean class="org.esupportail.papercut.esup_portlet10_papercut.services.PapercutService">
+
+						<property name="authToken" value="tokenpapercut" />
+						<property name="server" value="papercut.univ-jfc.fr" />
+						<property name="port" value="9191" />
+
+					</bean>
+
+				</property>
+
+			</bean>
+
+		</entry>
+
+	</util:map>
+	
+</beans>
