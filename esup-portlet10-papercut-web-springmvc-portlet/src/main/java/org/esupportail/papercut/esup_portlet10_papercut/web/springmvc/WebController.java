@@ -52,7 +52,7 @@ public class WebController extends AbastractExceptionController {
     	
     	String paperCutContext = request.getPreferences().getValue(PREF_PAPERCUT_CONTEXT, null);
         EsupPaperCutService esupPaperCutService = esupPaperCutServices.get(paperCutContext);
-        log.info("PapercutContyext : " + paperCutContext);
+        model.put("papercutServerUrl", esupPaperCutService.getServerUrl());
         
         String uid = getUid(request);
         String userMail = getUserMail(request);

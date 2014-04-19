@@ -65,6 +65,10 @@ public class PapercutService implements InitializingBean {
     	log.info(logMessage);
     	serverProxy.adjustUserAccountBalance(uid, amount, logMessage);
     }
+    
+    public String getServerUrl() {
+		return "http://" + server + ":" + port;
+	}
 
 	
 }

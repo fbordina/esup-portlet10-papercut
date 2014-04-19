@@ -35,5 +35,9 @@ public class EsupPaperCutService {
 	public UserPapercutInfos getUserPapercutInfos(String uid) {
 		return papercutService.getUserPapercutInfos(uid);
 	}
+	
+	public String getServerUrl() {
+		return papercutService.getServerUrl();
+	}
 
 }

@@ -4,19 +4,22 @@
 
 <div class="portlet-title">
   <h2>
-    ${userFromEC2.login} !
+    <spring:message code="index.title"/>
   </h2>
 </div>
 
 <div class="portlet-section">
+
 
   <div class="portlet-section-body">
   
   		<div class="portlet-section-body">
 			<c:out value="${htmlHeader}" escapeXml="false"/>
 		</div>
-	
-		<p>
+			<p>
+				<spring:message code="index.fullName"/> : <b>${userPapercutInfos.fullName} (${userPapercutInfos.uid})</b>
+			</p>
+			<p>
 				<spring:message code="index.sold"/> : <b>${userPapercutInfos.balance} EUR</b>
 			</p>
 			<p>
@@ -27,7 +30,7 @@
 			</p>
 
 
-				<div class="portlet-section-body">
+				<!-- <div class="portlet-section-body">
 			
 					<h3>Autres infos ...</h3>
 			
@@ -47,17 +50,11 @@
 						<dt><spring:message code="index.notes"/></dt>
 						<dd>${userPapercutInfos.notes}</dd>
 					</dl>
-			
-				</div>
+			 	
+				</div>-->
 	
-	
-	<ul>
-    	<li><spring:message code="view.helloString" arguments="${userFromEC2.login}"/></li>
-    	<li><spring:message code="view.helloString" arguments="${usernamePref}"/></li>
-    	<li><spring:message code="view.helloString" arguments="${remoteUser}"/></li>
-	</ul>
-	
-			<div class="portlet-section-body">
+		<div class="portlet-section-body">
+			<a href="${papercutServerUrl}" target="_blank">Mon compte en détail...</a>
 			<c:out value="${htmlFooter}" escapeXml="false"/>
 		</div>
   </div>
